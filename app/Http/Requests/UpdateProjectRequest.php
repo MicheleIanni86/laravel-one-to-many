@@ -26,6 +26,8 @@ class UpdateProjectRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'content' => 'required|string',
+            'type_id' => 'required|exists:types,id', 
+
         ];
     }
 
@@ -42,6 +44,8 @@ class UpdateProjectRequest extends FormRequest
             'title.max' => 'Il titolo deve essere massimo di :max caratteri',
             'content.required' => 'Il contenuto è obbligatorio',
             'content.string' => 'Il contenuto deve essere un valore testuale',
+            'type_id.required' => 'Devi scegliere una tipologia!'
+
         ];
     }
 

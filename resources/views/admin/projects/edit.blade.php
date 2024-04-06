@@ -34,11 +34,11 @@
             </div>
 
             <div class="col-6">
-                <label for="type_id" class="form-label">TIPO</label>
+                <label for="type_id" class="form-label d-block">TIPO</label>
                 <select name="type_id" id="type_id">
                     <option value="" class="d-inline-block"> Seleziona un Tipo</option>
                     @foreach ($types as $type)
-                    <option value="{{ $type->id }}">{{ $type->label }}</option>
+                    <option {{ $type->id == old('type_it', $project->type_id) ? 'selected' : '' }} value="{{ $type->id }}">{{ $type->label }}</option>
                         
                     @endforeach
                 </select>            
