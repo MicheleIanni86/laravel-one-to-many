@@ -28,9 +28,20 @@
             @method('PATCH')
             @csrf
 
-            <div class="col-12">
+            <div class="col-6">
                 <label for="title" class="form-label">TITOLO</label>
                 <input type="text" name="title" id="title" class="form-control" value="{{ old('title', $project['title']) }}">
+            </div>
+
+            <div class="col-6">
+                <label for="type_id" class="form-label">TIPO</label>
+                <select name="type_id" id="type_id">
+                    <option value="" class="d-inline-block"> Seleziona un Tipo</option>
+                    @foreach ($types as $type)
+                    <option value="{{ $type->id }}">{{ $type->label }}</option>
+                        
+                    @endforeach
+                </select>            
             </div>
 
             <div class="col-12">

@@ -17,35 +17,40 @@
             <thead>
                 <th>ID</th>
                 <th>TITOLO</th>
+                <th>TIPO</th>
                 <th>SLUG</th>
                 <th>ESTRATTO</th>
                 <th></th>
                 <th></th>
                 <th></th>
+
             </thead>
             <tbody>
                 @forelse ($projects as $project)
                 <tr>
-                    <td>{{ $project['id'] }}</td>
-                    <td>{{ $project['title'] }}</td>
-                    <td>{{ $project['slug'] }}</td>
-                    <td>{{ $project['content'] }}</td>
+                    <td>{{ $project->id }}</td>
+                    <td>{{ $project->title }}</td>
+                    <td>{{ $project->type->label }}</td>
+                    <td>{{ $project->slug }}</td>
+                    <td>{{ $project->content }}</td>
                     <td>
                         <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-primary">
                             <i class="fa-solid fa-eye fa-sm"></i>
                         </a> 
                     </td>
-
                     <td>
+
                         <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-primary">
                             <i class="fa-solid fa-pencil fa-sm"></i>
                         </a> 
                     </td>
-                    <td>
-                        <a href="{{ route('admin.projects.destroy', $project) }}" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-project-{{ $project->id }}-modal">
-                            <i class="fa-solid fa-trash fa-sm"></i>
-                        </a> 
-                    </td>
+                        <td>
+
+                            <a href="{{ route('admin.projects.destroy', $project) }}" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-project-{{ $project->id }}-modal">
+                                <i class="fa-solid fa-trash fa-sm"></i>
+                            </a> 
+                        </td>
+                    
                 </tr>
                     
                 @empty
