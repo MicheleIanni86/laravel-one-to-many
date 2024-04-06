@@ -30,7 +30,7 @@
                 <tr>
                     <td>{{ $project->id }}</td>
                     <td>{{ $project->title }}</td>
-                    <td>{{ $project->type->label }}</td>
+                    <td>{!! $project->type->getBadge() !!}</td>
                     <td>{{ $project->slug }}</td>
                     <td>{{ $project->content }}</td>
                     <td>
