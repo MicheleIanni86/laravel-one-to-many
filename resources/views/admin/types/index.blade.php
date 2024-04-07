@@ -30,13 +30,13 @@
                     <td>{{ $type->color }}</td>
                     <td>{!! $type->getBadge() !!}</td>
                     <td>
-                        {{-- <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-primary">
+                        <a href="{{ route('admin.types.show', $type) }}" class="btn btn-primary">
                             <i class="fa-solid fa-eye fa-sm"></i>
                         </a> 
                     </td>
                     <td>
 
-                        <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-primary">
+                        {{-- <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-primary">
                             <i class="fa-solid fa-pencil fa-sm"></i>
                         </a> 
                     </td>
@@ -44,9 +44,9 @@
 
                             <a href="{{ route('admin.projects.destroy', $project) }}" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-project-{{ $project->id }}-modal">
                                 <i class="fa-solid fa-trash fa-sm"></i>
-                            </a>  --}}
+                            </a> 
                         </td>
-                    
+                     --}}
                 </tr>
                     
                 @empty

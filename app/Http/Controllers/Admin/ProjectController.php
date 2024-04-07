@@ -8,6 +8,7 @@ use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Type;
+use Doctrine\DBAL\Types\Types;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -64,7 +65,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('admin.projects.show', compact('project'));
+        return view('admin.projects.show', compact('project', 'types'));
     }
 
     /**
