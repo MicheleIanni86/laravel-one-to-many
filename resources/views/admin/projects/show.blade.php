@@ -13,11 +13,20 @@
         </a>
 
 
-        <h1>Dettaglio Project</h1>
+        <h3>Dettaglio Project: <strong class="fs-2">{{ $project->title }}</strong></h3>
 
-        <p><strong>{{ $project['title'] }}</strong></p>
-        <p>{{ $project['content'] }}</p>
+        <div class="card mt-4 p-4">
 
+            <h3 class="">Titolo:</h3>
+            <p><strong>{{ $project['title'] }}</strong></p>
+            <br>
+            <h3>Tipo:</h3>
+            <p><strong class="fs-3">{!! $project->type->getBadge() !!}</strong></p>
+            <br>
+            <h3>Contenuto:</h3>
+            <p>{{ $project['content'] }}</p>
+        </div>
+            
 
     </div>
 
