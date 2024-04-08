@@ -10,6 +10,7 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Type;
 use Doctrine\DBAL\Types\Types;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class ProjectController extends Controller
@@ -21,7 +22,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::orderBy('id', 'DESC')->paginate(6);
+   
+        $projects = Project::orderBy('id', 'DESC')->where('user_id', Auth::id())->paginate(6);
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -51,6 +53,7 @@ class ProjectController extends Controller
 
         $project = new Project;
         $project->fill($data);
+        $project->user_id = Auth::id();
         $project->slug = Str::slug($project->title);
         $project->save();
 

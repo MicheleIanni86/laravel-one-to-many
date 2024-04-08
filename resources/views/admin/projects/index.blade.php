@@ -20,6 +20,7 @@
                 <th>TIPO</th>
                 <th>SLUG</th>
                 <th>ESTRATTO</th>
+                <th>AUTORE</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -32,7 +33,8 @@
                     <td>{{ $project->title }}</td>
                     <td>{!! $project->type->getBadge() !!}</td>
                     <td>{{ $project->slug }}</td>
-                    <td>{{ $project->content }}</td>
+                    <td>{{ $project->content }}</td>    
+                    <td><strong>{{ $project->user->name }}</strong></td>
                     <td>
                         <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-primary">
                             <i class="fa-solid fa-eye fa-sm"></i>
