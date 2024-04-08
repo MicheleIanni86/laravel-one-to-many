@@ -18,7 +18,7 @@
                 <th>ETICHETTA</th>
                 <th>COLORE</th>
                 <th>BADGE</th>
-                <th></th>
+                <th>VEDI PROJECTS</th>
                 <th></th>
                 <th></th>
             </thead>

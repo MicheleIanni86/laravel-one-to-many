@@ -27,7 +27,7 @@ class TypeController extends Controller
     public function create()
     {
         $types = new Type;
-        return view('admin.types.create', compact('type'));
+        return view('admin.types.create', compact('types'));
     }
 
     /**
@@ -54,7 +54,9 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        return view('admin.types.show', compact('type'));
+        $related_projects = $type->projects()->paginate(6);
+        return view('admin.types.show', compact('type','related_projects'));
+
     }
 
     /**
